@@ -1,0 +1,29 @@
+{
+  "name": "serverless-examples",
+  "main": "src/index.js",
+  "private": true,
+  "scripts": {
+    "deploy": "node -r dotenv/config ./node_modules/.bin/serverless deploy -s $NODE_ENV",
+    "severless-example-1": "node -r dotenv/config ./node_modules/.bin/serverless invoke local -f severless-example-1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bunyan": "^1.8.12",
+    "bunyan-seq": "^0.2.0",
+    "pg-promise": "^8.4.4",
+    "puppeteer": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.4",
+    "@types/puppeteer": "^1.2.0",
+    "dotenv": "^5.0.1",
+    "husky": "^1.1.0",
+    "serverless": "^1.32.0",
+    "serverless-plugin-typescript": "1.1.5"
+  }
+}

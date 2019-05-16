@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "sourceMap": true,
+    "target": "es5",
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "lib": ["es2015", "dom", "esnext.asynciterable"],
+    "rootDir": "./"
+  },
+  "exclude": ["node_modules"]
+}

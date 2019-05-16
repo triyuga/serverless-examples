@@ -1,0 +1,22 @@
+service: serverless-examples
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: ap-southeast-2
+  stage: ${opt:stage, 'development'}
+  environment: ${file(env.yml):${self:provider.stage}}
+
+plugins:
+  - serverless-plugin-typescript
+
+functions:
+  severless-example-1:
+    handler: src/handlers/severless-example-1/index.default
+    name: severless-example-1-${self:provider.stage}
+    memorySize: 1536
+    timeout: 300
+    events:
+      - schedule:
+          name: severless-example-1-${self:provider.stage}-schedule
+          rate: cron(5 * * * ? *) # 5 mins past the hour, every hour
